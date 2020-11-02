@@ -1,0 +1,74 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  sam-api-gateway
+
+  Sample SAM Template for sam-api-gateway
+
+Globals:
+  Function:
+    Timeout: 3
+    CodeUri: todo/
+    Runtime: python3.8
+
+Resources:
+######## functions #######
+  AddTodo:
+    Type: AWS::Serverless::Function 
+    Properties:
+      Handler: app.add
+      Events:
+        addTodo:
+          Type: Api 
+          Properties:
+            Path: /add
+            Method: put
+            RestApiId: !Ref TodoApi
+  RemoveTodo:
+    Type: AWS::Serverless::Function 
+    Properties:
+      Handler: app.remove
+      Events:
+        addTodo:
+          Type: Api 
+          Properties:
+            Path: /remove
+            Method: delete
+            RestApiId: !Ref TodoApi
+  GetTodo:
+    Type: AWS::Serverless::Function 
+    Properties:
+      Handler: app.get
+      Events:
+        addTodo:
+          Type: Api 
+          Properties:
+            Path: /get
+            Method: get
+            RestApiId: !Ref TodoApi
+  EditTodo:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: app.edit
+      Events:
+        addTodo:
+          Type: Api 
+          Properties:
+            Path: /edit
+            Method: post
+            RestApiId: !Ref TodoApi
+######### apis ########
+  TodoApi:
+    Type: AWS::Serverless::Api
+    Properties:
+      StageName: Prod
+      Auth:
+        DefaultAuthorizer: AWS_IAM
+      EndpointConfiguration:
+        Type: EDGE
+
+
+Outputs:
+  MainApi:
+    Description: "api"
+    Value: !Sub "https://${TodoApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/"
