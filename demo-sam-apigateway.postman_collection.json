@@ -1,0 +1,251 @@
+{
+	"info": {
+		"_postman_id": "0f699d6d-50ce-4538-b11e-b0f8faa58c43",
+		"name": "demo-sam-apigateway",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "addTodo",
+			"request": {
+				"auth": {
+					"type": "awsv4",
+					"awsv4": [
+						{
+							"key": "addAuthDataToQuery",
+							"value": false,
+							"type": "boolean"
+						},
+						{
+							"key": "secretKey",
+							"value": "PRHsp8ORbKI8/pXUvRSkjtjdarVPtlPX67i6nbAz",
+							"type": "string"
+						},
+						{
+							"key": "accessKey",
+							"value": "AKIAVX4Z5TKDWFFCSZXX",
+							"type": "string"
+						},
+						{
+							"key": "service",
+							"value": "execute-api",
+							"type": "string"
+						},
+						{
+							"key": "region",
+							"value": "ap-southeast-1",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "https://{{apiId}}.execute-api.ap-southeast-1.amazonaws.com/Prod/add",
+					"protocol": "https",
+					"host": [
+						"{{apiId}}",
+						"execute-api",
+						"ap-southeast-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"Prod",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "removeTodo",
+			"request": {
+				"auth": {
+					"type": "awsv4",
+					"awsv4": [
+						{
+							"key": "addAuthDataToQuery",
+							"value": false,
+							"type": "boolean"
+						},
+						{
+							"key": "secretKey",
+							"value": "PRHsp8ORbKI8/pXUvRSkjtjdarVPtlPX67i6nbAz",
+							"type": "string"
+						},
+						{
+							"key": "accessKey",
+							"value": "AKIAVX4Z5TKDWFFCSZXX",
+							"type": "string"
+						},
+						{
+							"key": "service",
+							"value": "execute-api",
+							"type": "string"
+						},
+						{
+							"key": "region",
+							"value": "ap-southeast-1",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://{{apiId}}.execute-api.ap-southeast-1.amazonaws.com/Prod/remove",
+					"protocol": "https",
+					"host": [
+						"{{apiId}}",
+						"execute-api",
+						"ap-southeast-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"Prod",
+						"remove"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "editTodo",
+			"request": {
+				"auth": {
+					"type": "awsv4",
+					"awsv4": [
+						{
+							"key": "addAuthDataToQuery",
+							"value": false,
+							"type": "boolean"
+						},
+						{
+							"key": "secretKey",
+							"value": "PRHsp8ORbKI8/pXUvRSkjtjdarVPtlPX67i6nbAz",
+							"type": "string"
+						},
+						{
+							"key": "accessKey",
+							"value": "AKIAVX4Z5TKDWFFCSZXX",
+							"type": "string"
+						},
+						{
+							"key": "service",
+							"value": "execute-api",
+							"type": "string"
+						},
+						{
+							"key": "region",
+							"value": "ap-southeast-1",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://{{apiId}}.execute-api.ap-southeast-1.amazonaws.com/Prod/edit",
+					"protocol": "https",
+					"host": [
+						"{{apiId}}",
+						"execute-api",
+						"ap-southeast-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"Prod",
+						"edit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getTodo",
+			"request": {
+				"auth": {
+					"type": "awsv4",
+					"awsv4": [
+						{
+							"key": "addAuthDataToQuery",
+							"value": false,
+							"type": "boolean"
+						},
+						{
+							"key": "secretKey",
+							"value": "PRHsp8ORbKI8/pXUvRSkjtjdarVPtlPX67i6nbAz",
+							"type": "string"
+						},
+						{
+							"key": "accessKey",
+							"value": "AKIAVX4Z5TKDWFFCSZXX",
+							"type": "string"
+						},
+						{
+							"key": "service",
+							"value": "execute-api",
+							"type": "string"
+						},
+						{
+							"key": "region",
+							"value": "ap-southeast-1",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://{{apiId}}.execute-api.ap-southeast-1.amazonaws.com/Prod/get",
+					"protocol": "https",
+					"host": [
+						"{{apiId}}",
+						"execute-api",
+						"ap-southeast-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"Prod",
+						"get"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "b5310cc7-480b-43cf-8112-a9e5ebe0cd8e",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "9d1745f7-97ed-4a86-aa54-6d5b4eb28a43",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "5e633be0-d31d-446c-9eca-e94d46d0b823",
+			"key": "apiId",
+			"value": "e3ibdbfrtl"
+		}
+	],
+	"protocolProfileBehavior": {}
+}
